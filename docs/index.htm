@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		 
+<html>
+<head>
+<title>&amp;charchart; v2.0</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+<!--
+body{
+	margin: 0;
+	background-color: #fff;
+}
+#charPool{
+	background-color: #ccc;
+	border: 2px solid #666;
+	padding: 10px;
+	font-size: 1.5em;
+	margin: 10px;
+	margin-left: 225px;
+}
+#charPool a{
+	color: #666;
+	text-decoration: none;
+}
+#charPool a:hover{
+	color: #000;
+}
+#charInfo{
+	float: left;
+	width: 175px;
+	background-color: #ccc;
+	border: 2px solid #666;
+	padding: 10px;
+	margin: 10px;
+	overflow: hidden;
+	text-align: center;
+}
+#charControls{
+	float: left;
+	width: 175px;
+	background-color: #ccc;
+	border: 2px solid #666;
+	padding: 10px;
+	margin: 10px;
+	overflow: hidden;
+	margin-top: 0;
+	clear: left;
+	font-size: .8em;
+}
+.charControl{
+	font-size: .8em;
+}
+#bigChar{
+	font-size: 10em;
+}
+#charCode{
+	background-color: #666;
+	color: #fff;
+	text-align: left;
+}
+#charDesc{
+	text-align: left;
+}
+-->
+</style>
+<script language="JavaScript" type="text/javascript">
+<!--
+function showChar(entity, code, desc){
+	var bigChar = document.getElementById("bigChar");
+	var charCode = document.getElementById("charCode");
+	var charDesc = document.getElementById("charDesc");
+	while (bigChar.hasChildNodes()){
+		document.getElementById("bigChar").removeChild(bigChar.lastChild);
+	}
+	while (charCode.hasChildNodes()){
+		document.getElementById("charCode").removeChild(charCode.lastChild);
+	}
+	while (charDesc.hasChildNodes()){
+		document.getElementById("charDesc").removeChild(charDesc.lastChild);
+	}
+	document.getElementById("bigChar").appendChild(document.createTextNode(entity));
+	document.getElementById("charCode").appendChild(document.createTextNode("&" + code + ";"));
+	document.getElementById("charDesc").appendChild(document.createTextNode(desc));
+}
+function changeFont(font){
+	document.getElementById("bigChar").style.fontFamily = font;
+}
+var weight = 1;
+function boldFont(){
+	if (weight == 1){
+		 document.getElementById("bigChar").style.fontWeight = "bold";
+		 weight = 0;
+	}else{
+		 document.getElementById("bigChar").style.fontWeight = "normal";
+		 weight = 1;
+	}
+}
+var italic = 1;
+function italicFont(){
+	if (italic == 1){
+		 document.getElementById("bigChar").style.fontStyle = "italic";
+		 italic = 0;
+	}else{
+		 document.getElementById("bigChar").style.fontStyle = "normal";
+		 italic = 1;
+	}
+}
+function colorFont(color){
+	document.getElementById("bigChar").style.color = color;
+}
+var underline = "";
+function underlineFont(){
+	if (underline == "underline"){
+		underline = "";
+	}else{
+		underline = "underline";
+	}
+	decorateFont(underline + " " + overline);
+}
+var overline = "";
+function overlineFont(){
+	if (overline == "overline"){
+		overline = "";
+	}else{
+		overline = "overline";
+	}
+	decorateFont(underline + " " + overline);
+}
+function decorateFont(decoration){
+	if (decoration == " "){
+		decoration = "none";
+	}
+	document.getElementById("bigChar").style.textDecoration = decoration;
+}
+//-->
+</script>
+
+</head>
+<body>
+
+<div id="charInfo">
+	<div id="bigChar">
+		&amp;
+	</div>
+	<div id="charCode">
+		&amp;amp;
+	</div>
+	<div id="charDesc">
+		ampersand
+	</div>
+</div>
+
+<div id="charControls"> 
+	font:
+	<select onchange="changeFont(this.value);" class="charControl">
+		<option></option>
+		<option value="serif">serif</option>
+		<option value="sans-serif">sans-serif</option>
+		<option value="monospace">monospace</option>
+		<option value="cursive">cursive</option>
+		<option value="fantasy">fantasy</option>
+		<option value="Arial">Arial</option>
+		<option value="Verdana">Verdana</option>
+		<option value="Times New Roman">Times New Roman</option>
+		<option value="Comic Sans MS">Comic Sans MS</option>
+		<option value="Trebuchet MS">Trebuchet MS</option>
+		<option value="Georgia">Georgia</option>
+	</select>
+	<br />
+	bold: 
+	<input type="checkbox" onclick="boldFont();" />
+	<br />
+	italic: 
+	<input type="checkbox" onclick="italicFont();" />
+	<br />
+	underline: 
+	<input type="checkbox" onclick="underlineFont();" />
+	<br />
+	overline: 
+	<input type="checkbox" onclick="overlineFont();" />
+	<br />
+	color: 
+	<input type="text" onchange="colorFont(this.value);" size="6" class="charControl" />
+</div>
+
+<div id="charPool">
+	 
+	<a href="#" onclick="showChar('&lsquo;', 'lsquo', 'left single quotation mark');">&lsquo;</a> 
+	<a href="#" onclick="showChar('&rsquo;', 'rsquo', 'right single quotation mark');">&rsquo;</a> 
+	<a href="#" onclick="showChar('&ldquo;', 'ldquo', 'left double quotation mark');">&ldquo;</a> 
+	<a href="#" onclick="showChar('&rdquo;', 'rdquo', 'right double quotation mark');">&rdquo;</a> 
+	<a href="#" onclick="showChar('&sbquo;', 'sbquo', 'single low-9 quotation mark');">&sbquo;</a> 
+	<a href="#" onclick="showChar('&bdquo;', 'bdquo', 'double low-9 quotation mark');">&bdquo;</a> 
+	<a href="#" onclick="showChar('&dagger;', 'dagger', 'dagger');">&dagger;</a> 
+	<a href="#" onclick="showChar('&Dagger;', 'Dagger', 'double dagger');">&Dagger;</a> 
+	<a href="#" onclick="showChar('&permil;', 'permil', 'per mille sign');">&permil;</a> 
+	<a href="#" onclick="showChar('&lsaquo;', 'lsaquo', 'single left-pointing angle quotation mark');">&lsaquo;</a> 
+	<a href="#" onclick="showChar('&rsaquo;', 'rsaquo', 'single right-pointing angle quotation mark');">&rsaquo;</a> 
+	<a href="#" onclick="showChar('&oline;', 'oline', 'overline = spacing overscore');">&oline;</a> 
+	<a href="#" onclick="showChar('&trade;', 'trade', 'trade mark sign');">&trade;</a> 
+	<a href="#" onclick="showChar('&ensp;', 'ensp', 'en space');">&ensp;</a> 
+	<a href="#" onclick="showChar('&emsp;', 'emsp', 'em space');">&emsp;</a> 
+	<a href="#" onclick="showChar('&thinsp;', 'thinsp', 'thin space');">&thinsp;</a> 
+	<a href="#" onclick="showChar('&zwnj;', 'zwnj', 'zero width non-joiner');">&zwnj;</a> 
+	<a href="#" onclick="showChar('&zwj;', 'zwj', 'zero width joiner');">&zwj;</a> 
+	<a href="#" onclick="showChar('&lrm;', 'lrm', 'left-to-right mark');">&lrm;</a> 
+	<a href="#" onclick="showChar('&rlm;', 'rlm', 'right-to-left mark');">&rlm;</a> 
+	<a href="#" onclick="showChar('&mdash;', 'mdash', 'em dash');">&mdash;</a> 
+	<a href="#" onclick="showChar('&ndash;', 'ndash', 'en dash');">&ndash;</a> 
+	<a href="#" onclick="showChar('&euro;', 'euro', 'euro');">&euro;</a> 
+	
+	<a href="#" onclick="showChar('&nbsp;', 'nbsp', 'no-break space = non-breaking space');">&nbsp;</a> 
+	<a href="#" onclick="showChar('&iexcl;', 'iexcl', 'inverted exclamation mark');">&iexcl;</a> 
+	<a href="#" onclick="showChar('&cent;', 'cent', 'cent sign');">&cent;</a> 
+	<a href="#" onclick="showChar('&pound;', 'pound', 'pound sign');">&pound;</a> 
+	<a href="#" onclick="showChar('&curren;', 'curren', 'currency sign');">&curren;</a> 
+	<a href="#" onclick="showChar('&yen;', 'yen', 'yen sign = yuan sign');">&yen;</a> 
+	<a href="#" onclick="showChar('&brvbar;', 'brvbar', 'broken bar = broken vertical bar');">&brvbar;</a> 
+	<a href="#" onclick="showChar('&sect;', 'sect', 'section sign');">&sect;</a> 
+	<a href="#" onclick="showChar('&uml;', 'uml', 'diaeresis = spacing diaeresis');">&uml;</a> 
+	<a href="#" onclick="showChar('&copy;', 'copy', 'copyright sign');">&copy;</a> 
+	<a href="#" onclick="showChar('&ordf;', 'ordf', 'feminine ordinal indicator');">&ordf;</a> 
+	<a href="#" onclick="showChar('&laquo;', 'laquo', 'left-pointing double angle quotation mark = left pointing guillemet');">&laquo;</a> 
+	<a href="#" onclick="showChar('&not;', 'not', 'not sign');">&not;</a> 
+	<a href="#" onclick="showChar('&shy;', 'shy', 'soft hyphen = discretionary hyphen');">&shy;</a> 
+	<a href="#" onclick="showChar('&reg;', 'reg', 'registered sign = registered trade mark sign');">&reg;</a> 
+	<a href="#" onclick="showChar('&macr;', 'macr', 'macron = spacing macron = overline = APL overbar');">&macr;</a> 
+	<a href="#" onclick="showChar('&deg;', 'deg', 'degree sign');">&deg;</a> 
+	<a href="#" onclick="showChar('&plusmn;', 'plusmn', 'plus-minus sign = plus-or-minus sign');">&plusmn;</a> 
+	<a href="#" onclick="showChar('&sup2;', 'sup2', 'superscript two = superscript digit two = squared');">&sup2;</a> 
+	<a href="#" onclick="showChar('&sup3;', 'sup3', 'superscript three = superscript digit three = cubed');">&sup3;</a> 
+	<a href="#" onclick="showChar('&acute;', 'acute', 'acute accent = spacing acute');">&acute;</a> 
+	<a href="#" onclick="showChar('&micro;', 'micro', 'micro sign');">&micro;</a> 
+	<a href="#" onclick="showChar('&para;', 'para', 'pilcrow sign = paragraph sign');">&para;</a> 
+	<a href="#" onclick="showChar('&middot;', 'middot', 'middle dot = Georgian comma = Greek middle dot');">&middot;</a> 
+	<a href="#" onclick="showChar('&cedil;', 'cedil', 'cedilla = spacing cedilla');">&cedil;</a> 
+	<a href="#" onclick="showChar('&sup1;', 'sup1', 'superscript one = superscript digit one');">&sup1;</a> 
+	<a href="#" onclick="showChar('&ordm;', 'ordm', 'masculine ordinal indicator');">&ordm;</a> 
+	<a href="#" onclick="showChar('&raquo;', 'raquo', 'right-pointing double angle quotation mark = right pointing guillemet');">&raquo;</a> 
+	<a href="#" onclick="showChar('&frac14;', 'frac14', 'vulgar fraction one quarter = fraction one quarter');">&frac14;</a> 
+	<a href="#" onclick="showChar('&frac12;', 'frac12', 'vulgar fraction one half = fraction one half');">&frac12;</a> 
+	<a href="#" onclick="showChar('&frac34;', 'frac34', 'vulgar fraction three quarters = fraction three quarters');">&frac34;</a> 
+	<a href="#" onclick="showChar('&iquest;', 'iquest', 'inverted question mark = turned question mark');">&iquest;</a> 
+	<a href="#" onclick="showChar('&Agrave;', 'Agrave', 'latin capital letter A with grave = latin capital letter A grave');">&Agrave;</a> 
+	<a href="#" onclick="showChar('&Aacute;', 'Aacute', 'latin capital letter A with acute');">&Aacute;</a> 
+	<a href="#" onclick="showChar('&Acirc;', 'Acirc', 'latin capital letter A with circumflex');">&Acirc;</a> 
+	<a href="#" onclick="showChar('&Atilde;', 'Atilde', 'latin capital letter A with tilde');">&Atilde;</a> 
+	<a href="#" onclick="showChar('&Auml;', 'Auml', 'latin capital letter A with diaeresis');">&Auml;</a> 
+	<a href="#" onclick="showChar('&Aring;', 'Aring', 'latin capital letter A with ring above = latin capital letter A ring');">&Aring;</a> 
+	<a href="#" onclick="showChar('&AElig;', 'AElig', 'latin capital letter AE = latin capital ligature AE');">&AElig;</a> 
+	<a href="#" onclick="showChar('&Ccedil;', 'Ccedil', 'latin capital letter C with cedilla');">&Ccedil;</a> 
+	<a href="#" onclick="showChar('&Egrave;', 'Egrave', 'latin capital letter E with grave');">&Egrave;</a> 
+	<a href="#" onclick="showChar('&Eacute;', 'Eacute', 'latin capital letter E with acute');">&Eacute;</a> 
+	<a href="#" onclick="showChar('&Ecirc;', 'Ecirc', 'latin capital letter E with circumflex');">&Ecirc;</a> 
+	<a href="#" onclick="showChar('&Euml;', 'Euml', 'latin capital letter E with diaeresis');">&Euml;</a> 
+	<a href="#" onclick="showChar('&Igrave;', 'Igrave', 'latin capital letter I with grave');">&Igrave;</a> 
+	<a href="#" onclick="showChar('&Iacute;', 'Iacute', 'latin capital letter I with acute');">&Iacute;</a> 
+	<a href="#" onclick="showChar('&Icirc;', 'Icirc', 'latin capital letter I with circumflex');">&Icirc;</a> 
+	<a href="#" onclick="showChar('&Iuml;', 'Iuml', 'latin capital letter I with diaeresis');">&Iuml;</a> 
+	<a href="#" onclick="showChar('&ETH;', 'ETH', 'latin capital letter ETH');">&ETH;</a> 
+	<a href="#" onclick="showChar('&Ntilde;', 'Ntilde', 'latin capital letter N with tilde');">&Ntilde;</a> 
+	<a href="#" onclick="showChar('&Ograve;', 'Ograve', 'latin capital letter O with grave');">&Ograve;</a> 
+	<a href="#" onclick="showChar('&Oacute;', 'Oacute', 'latin capital letter O with acute');">&Oacute;</a> 
+	<a href="#" onclick="showChar('&Ocirc;', 'Ocirc', 'latin capital letter O with circumflex');">&Ocirc;</a> 
+	<a href="#" onclick="showChar('&Otilde;', 'Otilde', 'latin capital letter O with tilde');">&Otilde;</a> 
+	<a href="#" onclick="showChar('&Ouml;', 'Ouml', 'latin capital letter O with diaeresis');">&Ouml;</a> 
+	<a href="#" onclick="showChar('&times;', 'times', 'multiplication sign');">&times;</a> 
+	<a href="#" onclick="showChar('&Oslash;', 'Oslash', 'latin capital letter O with stroke = latin capital letter O slash');">&Oslash;</a> 
+	<a href="#" onclick="showChar('&Ugrave;', 'Ugrave', 'latin capital letter U with grave');">&Ugrave;</a> 
+	<a href="#" onclick="showChar('&Uacute;', 'Uacute', 'latin capital letter U with acute');">&Uacute;</a> 
+	<a href="#" onclick="showChar('&Ucirc;', 'Ucirc', 'latin capital letter U with circumflex');">&Ucirc;</a> 
+	<a href="#" onclick="showChar('&Uuml;', 'Uuml', 'latin capital letter U with diaeresis');">&Uuml;</a> 
+	<a href="#" onclick="showChar('&Yacute;', 'Yacute', 'latin capital letter Y with acute');">&Yacute;</a> 
+	<a href="#" onclick="showChar('&THORN;', 'THORN', 'latin capital letter THORN');">&THORN;</a> 
+	<a href="#" onclick="showChar('&szlig;', 'szlig', 'latin small letter sharp s = ess-zed');">&szlig;</a> 
+	<a href="#" onclick="showChar('&agrave;', 'agrave', 'latin small letter a with grave = latin small letter a grave');">&agrave;</a> 
+	<a href="#" onclick="showChar('&aacute;', 'aacute', 'latin small letter a with acute');">&aacute;</a> 
+	<a href="#" onclick="showChar('&acirc;', 'acirc', 'latin small letter a with circumflex');">&acirc;</a> 
+	<a href="#" onclick="showChar('&atilde;', 'atilde', 'latin small letter a with tilde');">&atilde;</a> 
+	<a href="#" onclick="showChar('&auml;', 'auml', 'latin small letter a with diaeresis');">&auml;</a> 
+	<a href="#" onclick="showChar('&aring;', 'aring', 'latin small letter a with ring above = latin small letter a ring');">&aring;</a> 
+	<a href="#" onclick="showChar('&aelig;', 'aelig', 'latin small letter ae = latin small ligature ae');">&aelig;</a> 
+	<a href="#" onclick="showChar('&ccedil;', 'ccedil', 'latin small letter c with cedilla');">&ccedil;</a> 
+	<a href="#" onclick="showChar('&egrave;', 'egrave', 'latin small letter e with grave');">&egrave;</a> 
+	<a href="#" onclick="showChar('&eacute;', 'eacute', 'latin small letter e with acute');">&eacute;</a> 
+	<a href="#" onclick="showChar('&ecirc;', 'ecirc', 'latin small letter e with circumflex');">&ecirc;</a> 
+	<a href="#" onclick="showChar('&euml;', 'euml', 'latin small letter e with diaeresis');">&euml;</a> 
+	<a href="#" onclick="showChar('&igrave;', 'igrave', 'latin small letter i with grave');">&igrave;</a> 
+	<a href="#" onclick="showChar('&iacute;', 'iacute', 'latin small letter i with acute');">&iacute;</a> 
+	<a href="#" onclick="showChar('&icirc;', 'icirc', 'latin small letter i with circumflex');">&icirc;</a> 
+	<a href="#" onclick="showChar('&iuml;', 'iuml', 'latin small letter i with diaeresis');">&iuml;</a> 
+	<a href="#" onclick="showChar('&eth;', 'eth', 'latin small letter eth');">&eth;</a> 
+	<a href="#" onclick="showChar('&ntilde;', 'ntilde', 'latin small letter n with tilde');">&ntilde;</a> 
+	<a href="#" onclick="showChar('&ograve;', 'ograve', 'latin small letter o with grave');">&ograve;</a> 
+	<a href="#" onclick="showChar('&oacute;', 'oacute', 'latin small letter o with acute');">&oacute;</a> 
+	<a href="#" onclick="showChar('&ocirc;', 'ocirc', 'latin small letter o with circumflex');">&ocirc;</a> 
+	<a href="#" onclick="showChar('&otilde;', 'otilde', 'latin small letter o with tilde');">&otilde;</a> 
+	<a href="#" onclick="showChar('&ouml;', 'ouml', 'latin small letter o with diaeresis');">&ouml;</a> 
+	<a href="#" onclick="showChar('&divide;', 'divide', 'division sign');">&divide;</a> 
+	<a href="#" onclick="showChar('&oslash;', 'oslash', 'latin small letter o with stroke = latin small letter o slash');">&oslash;</a> 
+	<a href="#" onclick="showChar('&ugrave;', 'ugrave', 'latin small letter u with grave');">&ugrave;</a> 
+	<a href="#" onclick="showChar('&uacute;', 'uacute', 'latin small letter u with acute');">&uacute;</a> 
+	<a href="#" onclick="showChar('&ucirc;', 'ucirc', 'latin small letter u with circumflex');">&ucirc;</a> 
+	<a href="#" onclick="showChar('&uuml;', 'uuml', 'latin small letter u with diaeresis');">&uuml;</a> 
+	<a href="#" onclick="showChar('&yacute;', 'yacute', 'latin small letter y with acute');">&yacute;</a> 
+	<a href="#" onclick="showChar('&thorn;', 'thorn', 'latin small letter thorn with');">&thorn;</a> 
+	<a href="#" onclick="showChar('&yuml;', 'yuml', 'latin small letter y with diaeresis');">&yuml;</a> 
+
+	<a href="#" onclick="showChar('&lt;', 'lt', 'less-than sign');">&lt;</a> 
+	<a href="#" onclick="showChar('&gt;', 'gt', 'greater-than sign');">&gt;</a> 
+	<a href="#" onclick="showChar('&amp;', 'amp', 'ampersand');">&amp;</a>  
+	<a href="#" onclick="showChar('&quot;', 'quot', 'quotation mark = APL quote');">&quot;</a> 
+	
+	<a href="#" onclick="showChar('&OElig;', 'OElig', 'latin capital ligature OE');">&OElig;</a> 
+	<a href="#" onclick="showChar('&oelig;', 'oelig', 'latin small ligature oe');">&oelig;</a> 
+	<a href="#" onclick="showChar('&fnof;', 'fnof', 'latin small f with hook = function = florin');">&fnof;</a> 
+	<a href="#" onclick="showChar('&Scaron;', 'Scaron', 'latin capital letter S with caron');">&Scaron;</a> 
+	<a href="#" onclick="showChar('&scaron;', 'scaron', 'latin small letter s with caron');">&scaron;</a> 
+	<a href="#" onclick="showChar('&Yuml;', 'Yuml', 'latin capital letter Y with diaeresis');">&Yuml;</a> 
+
+	<a href="#" onclick="showChar('&circ;', 'circ', 'modifier letter circumflex accent');">&circ;</a> 
+	<a href="#" onclick="showChar('&tilde;', 'tilde', 'small tilde');">&tilde;</a> 
+
+	<a href="#" onclick="showChar('&Alpha;', 'Alpha', 'greek capital letter alpha');">&Alpha;</a> 
+	<a href="#" onclick="showChar('&Beta;', 'Beta', 'greek capital letter beta');">&Beta;</a> 
+	<a href="#" onclick="showChar('&Gamma;', 'Gamma', 'greek capital letter gamma');">&Gamma;</a> 
+	<a href="#" onclick="showChar('&Delta;', 'Delta', 'greek capital letter delta');">&Delta;</a> 
+	<a href="#" onclick="showChar('&Epsilon;', 'Epsilon', 'greek capital letter epsilon');">&Epsilon;</a> 
+	<a href="#" onclick="showChar('&Zeta;', 'Zeta', 'greek capital letter zeta');">&Zeta;</a> 
+	<a href="#" onclick="showChar('&Eta;', 'Eta', 'greek capital letter eta');">&Eta;</a> 
+	<a href="#" onclick="showChar('&Theta;', 'Theta', 'greek capital letter theta');">&Theta;</a> 
+	<a href="#" onclick="showChar('&Iota;', 'Iota', 'greek capital letter iota');">&Iota;</a> 
+	<a href="#" onclick="showChar('&Kappa;', 'Kappa', 'greek capital letter kappa');">&Kappa;</a> 
+	<a href="#" onclick="showChar('&Lambda;', 'Lambda', 'greek capital letter lambda');">&Lambda;</a> 
+	<a href="#" onclick="showChar('&Mu;', 'Mu', 'greek capital letter mu');">&Mu;</a> 
+	<a href="#" onclick="showChar('&Nu;', 'Nu', 'greek capital letter nu');">&Nu;</a> 
+	<a href="#" onclick="showChar('&Xi;', 'Xi', 'greek capital letter xi');">&Xi;</a> 
+	<a href="#" onclick="showChar('&Omicron;', 'Omicron', 'greek capital letter omicron');">&Omicron;</a> 
+	<a href="#" onclick="showChar('&Pi;', 'Pi', 'greek capital letter pi');">&Pi;</a> 
+	<a href="#" onclick="showChar('&Rho;', 'Rho', 'greek capital letter rho');">&Rho;</a> 
+	<a href="#" onclick="showChar('&Sigma;', 'Sigma', 'greek capital letter sigma');">&Sigma;</a> 
+	<a href="#" onclick="showChar('&Tau;', 'Tau', 'greek capital letter tau');">&Tau;</a> 
+	<a href="#" onclick="showChar('&Upsilon;', 'Upsilon', 'greek capital letter upsilon');">&Upsilon;</a> 
+	<a href="#" onclick="showChar('&Phi;', 'Phi', 'greek capital letter phi');">&Phi;</a> 
+	<a href="#" onclick="showChar('&Chi;', 'Chi', 'greek capital letter chi');">&Chi;</a> 
+	<a href="#" onclick="showChar('&Psi;', 'Psi', 'greek capital letter psi');">&Psi;</a> 
+	<a href="#" onclick="showChar('&Omega;', 'Omega', 'greek capital letter omega');">&Omega;</a> 
+	<a href="#" onclick="showChar('&alpha;', 'alpha', 'greek small letter alpha');">&alpha;</a> 
+	<a href="#" onclick="showChar('&beta;', 'beta', 'greek small letter beta');">&beta;</a> 
+	<a href="#" onclick="showChar('&gamma;', 'gamma', 'greek small letter gamma');">&gamma;</a> 
+	<a href="#" onclick="showChar('&delta;', 'delta', 'greek small letter delta');">&delta;</a> 
+	<a href="#" onclick="showChar('&epsilon;', 'epsilon', 'greek small letter epsilon');">&epsilon;</a> 
+	<a href="#" onclick="showChar('&zeta;', 'zeta', 'greek small letter zeta');">&zeta;</a> 
+	<a href="#" onclick="showChar('&eta;', 'eta', 'greek small letter eta');">&eta;</a> 
+	<a href="#" onclick="showChar('&theta;', 'theta', 'greek small letter theta');">&theta;</a> 
+	<a href="#" onclick="showChar('&iota;', 'iota', 'greek small letter iota');">&iota;</a> 
+	<a href="#" onclick="showChar('&kappa;', 'kappa', 'greek small letter kappa');">&kappa;</a> 
+	<a href="#" onclick="showChar('&lambda;', 'lambda', 'greek small letter lambda');">&lambda;</a> 
+	<a href="#" onclick="showChar('&mu;', 'mu', 'greek small letter mu');">&mu;</a> 
+	<a href="#" onclick="showChar('&nu;', 'nu', 'greek small letter nu');">&nu;</a> 
+	<a href="#" onclick="showChar('&xi;', 'xi', 'greek small letter xi');">&xi;</a> 
+	<a href="#" onclick="showChar('&omicron;', 'omicron', 'greek small letter omicron');">&omicron;</a> 
+	<a href="#" onclick="showChar('&pi;', 'pi', 'greek small letter pi');">&pi;</a> 
+	<a href="#" onclick="showChar('&rho;', 'rho', 'greek small letter rho');">&rho;</a> 
+	<a href="#" onclick="showChar('&sigmaf;', 'sigmaf', 'greek small letter final sigma');">&sigmaf;</a> 
+	<a href="#" onclick="showChar('&sigma;', 'sigma', 'greek small letter sigma');">&sigma;</a> 
+	<a href="#" onclick="showChar('&tau;', 'tau', 'greek small letter tau');">&tau;</a> 
+	<a href="#" onclick="showChar('&upsilon;', 'upsilon', 'greek small letter upsilon');">&upsilon;</a> 
+	<a href="#" onclick="showChar('&phi;', 'phi', 'greek small letter phi');">&phi;</a> 
+	<a href="#" onclick="showChar('&chi;', 'chi', 'greek small letter chi');">&chi;</a> 
+	<a href="#" onclick="showChar('&psi;', 'psi', 'greek small letter psi');">&psi;</a> 
+	<a href="#" onclick="showChar('&omega;', 'omega', 'greek small letter omega');">&omega;</a> 
+	<a href="#" onclick="showChar('&thetasym;', 'thetasym', 'greek small letter theta symbol');">&thetasym;</a> 
+	<a href="#" onclick="showChar('&upsih;', 'upsih', 'greek upsilon with hook symbol');">&upsih;</a> 
+	<a href="#" onclick="showChar('&piv;', 'piv', 'greek pi symbol');">&piv;</a> 
+	
+	<a href="#" onclick="showChar('&bull;', 'bull', 'bullet = black small circle');">&bull;</a> 
+	<a href="#" onclick="showChar('&hellip;', 'hellip', 'horizontal ellipsis = three dot leader');">&hellip;</a> 
+	<a href="#" onclick="showChar('&prime;', 'prime', 'prime = minutes = feet');">&prime;</a> 
+	<a href="#" onclick="showChar('&Prime;', 'Prime', 'double prime = seconds = inches');">&Prime;</a> 
+	<a href="#" onclick="showChar('&oline;', 'oline', 'overline = spacing overscore');">&oline;</a> 
+	<a href="#" onclick="showChar('&frasl;', 'frasl', 'fraction slash');">&frasl;</a> 
+	
+	<a href="#" onclick="showChar('&weierp;', 'weierp', 'script capital P = power set = Weierstrass p');">&weierp;</a> 
+	<a href="#" onclick="showChar('&image;', 'image', 'blackletter capital I = imaginary part');">&image;</a> 
+	<a href="#" onclick="showChar('&real;', 'real', 'blackletter capital R = real part symbol');">&real;</a> 
+	<a href="#" onclick="showChar('&trade;', 'trade', 'trade mark sign');">&trade;</a> 
+	<a href="#" onclick="showChar('&alefsym;', 'alefsym', 'alef symbol = first transfinite cardinal');">&alefsym;</a> 
+	
+	<a href="#" onclick="showChar('&larr;', 'larr', 'leftwards arrow');">&larr;</a> 
+	<a href="#" onclick="showChar('&uarr;', 'uarr', 'upwards arrow');">&uarr;</a> 
+	<a href="#" onclick="showChar('&rarr;', 'rarr', 'rightwards arrow');">&rarr;</a> 
+	<a href="#" onclick="showChar('&darr;', 'darr', 'downwards arrow');">&darr;</a> 
+	<a href="#" onclick="showChar('&harr;', 'harr', 'left right arrow');">&harr;</a> 
+	<a href="#" onclick="showChar('&crarr;', 'crarr', 'downwards arrow with corner leftwards = carriage return');">&crarr;</a> 
+	<a href="#" onclick="showChar('&lArr;', 'lArr', 'leftwards double arrow');">&lArr;</a> 
+	<a href="#" onclick="showChar('&uArr;', 'uArr', 'upwards double arrow');">&uArr;</a> 
+	<a href="#" onclick="showChar('&rArr;', 'rArr', 'rightwards double arrow');">&rArr;</a> 
+	<a href="#" onclick="showChar('&dArr;', 'dArr', 'downwards double arrow');">&dArr;</a> 
+	<a href="#" onclick="showChar('&hArr;', 'hArr', 'left right double arrow');">&hArr;</a> 
+	
+	<a href="#" onclick="showChar('&forall;', 'forall', 'for all');">&forall;</a> 
+	<a href="#" onclick="showChar('&part;', 'part', 'partial differential');">&part;</a> 
+	<a href="#" onclick="showChar('&exist;', 'exist', 'there exists');">&exist;</a> 
+	<a href="#" onclick="showChar('&empty;', 'empty', 'empty set = null set = diameter');">&empty;</a> 
+	<a href="#" onclick="showChar('&nabla;', 'nabla', 'nabla = backward difference');">&nabla;</a> 
+	<a href="#" onclick="showChar('&isin;', 'isin', 'element of');">&isin;</a> 
+	<a href="#" onclick="showChar('&notin;', 'notin', 'not an element of');">&notin;</a> 
+	<a href="#" onclick="showChar('&ni;', 'ni', 'contains as member');">&ni;</a> 
+	<a href="#" onclick="showChar('&prod;', 'prod', 'n-ary product = product sign');">&prod;</a> 
+	<a href="#" onclick="showChar('&sum;', 'sum', 'n-ary sumation');">&sum;</a> 
+	<a href="#" onclick="showChar('&minus;', 'minus', 'minus sign');">&minus;</a> 
+	<a href="#" onclick="showChar('&lowast;', 'lowast', 'asterisk operator');">&lowast;</a> 
+	<a href="#" onclick="showChar('&radic;', 'radic', 'square root = radical sign');">&radic;</a> 
+	<a href="#" onclick="showChar('&prop;', 'prop', 'proportional to');">&prop;</a> 
+	<a href="#" onclick="showChar('&infin;', 'infin', 'infinity');">&infin;</a> 
+	<a href="#" onclick="showChar('&ang;', 'ang', 'angle');">&ang;</a> 
+	<a href="#" onclick="showChar('&and;', 'and', 'logical and = wedge');">&and;</a> 
+	<a href="#" onclick="showChar('&or;', 'or', 'logical or = vee');">&or;</a> 
+	<a href="#" onclick="showChar('&cap;', 'cap', 'intersection = cap');">&cap;</a> 
+	<a href="#" onclick="showChar('&cup;', 'cup', 'union = cup');">&cup;</a> 
+	<a href="#" onclick="showChar('&int;', 'int', 'integral');">&int;</a> 
+	<a href="#" onclick="showChar('&there4;', 'there4', 'therefore');">&there4;</a> 
+	<a href="#" onclick="showChar('&sim;', 'sim', 'tilde operator = varies with = similar to');">&sim;</a> 
+	<a href="#" onclick="showChar('&cong;', 'cong', 'approximately equal to');">&cong;</a> 
+	<a href="#" onclick="showChar('&asymp;', 'asymp', 'almost equal to = asymptotic to');">&asymp;</a> 
+	<a href="#" onclick="showChar('&ne;', 'ne', 'not equal to');">&ne;</a> 
+	<a href="#" onclick="showChar('&equiv;', 'equiv', 'identical to');">&equiv;</a> 
+	<a href="#" onclick="showChar('&le;', 'le', 'less-than or equal to');">&le;</a> 
+	<a href="#" onclick="showChar('&ge;', 'ge', 'greater-than or equal to');">&ge;</a> 
+	<a href="#" onclick="showChar('&sub;', 'sub', 'subset of');">&sub;</a> 
+	<a href="#" onclick="showChar('&sup;', 'sup', 'superset of');">&sup;</a> 
+	<a href="#" onclick="showChar('&nsub;', 'nsub', 'not a subset of');">&nsub;</a> 
+	<a href="#" onclick="showChar('&sube;', 'sube', 'subset of or equal to');">&sube;</a> 
+	<a href="#" onclick="showChar('&supe;', 'supe', 'superset of or equal to');">&supe;</a> 
+	<a href="#" onclick="showChar('&oplus;', 'oplus', 'circled plus = direct sum');">&oplus;</a> 
+	<a href="#" onclick="showChar('&otimes;', 'otimes', 'circled times = vector product');">&otimes;</a> 
+	<a href="#" onclick="showChar('&perp;', 'perp', 'up tack = orthogonal to = perpendicular');">&perp;</a> 
+	<a href="#" onclick="showChar('&sdot;', 'sdot', 'dot operator');">&sdot;</a> 
+
+	<a href="#" onclick="showChar('&lceil;', 'lceil', 'left ceiling');">&lceil;</a> 
+	<a href="#" onclick="showChar('&rceil;', 'rceil', 'right ceiling');">&rceil;</a> 
+	<a href="#" onclick="showChar('&lfloor;', 'lfloor', 'left floor');">&lfloor;</a> 
+	<a href="#" onclick="showChar('&rfloor;', 'rfloor', 'right floor');">&rfloor;</a> 
+	<a href="#" onclick="showChar('&lang;', 'lang', 'left-pointing angle bracket = bra');">&lang;</a> 
+	<a href="#" onclick="showChar('&rang;', 'rang', 'right-pointing angle bracket = ket');">&rang;</a> 
+	
+	<a href="#" onclick="showChar('&loz;', 'loz', 'lozenge');">&loz;</a> 
+	
+	<a href="#" onclick="showChar('&spades;', 'spades', 'black spade suit');">&spades;</a> 
+	<a href="#" onclick="showChar('&clubs;', 'clubs', 'black club suit = shamrock');">&clubs;</a> 
+	<a href="#" onclick="showChar('&hearts;', 'hearts', 'black heart suit = valentine');">&hearts;</a> 
+	<a href="#" onclick="showChar('&diams;', 'diams', 'black diamond suit');">&diams;</a> 
+	
+<!-- 
+	<a href="#" onclick="showChar('&;', '', '');">&;</a> 
+-->
+	
+</div>
+</body>
+</html>
